@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Treino</title>
+
+    </head>
+    <body>
+        <input type="button" onclick="exemploEvento()" value="Apresentar"></button>
+        
+        <h1 id="exemplo">Usando seletor</h1>
+        
+        <ul id="lista"></ul>
+
+        <ul id="listaTime"></ul>
+
+        <div id="conteudo" name="divcontent" class="mensagem"></div>
+
+        <button onclick="document.getElementById('sorte').innerHTML= 'oi'">Sorte do dia</button>
+        <p id="sorte"></p>
+    </body>
+    <script>
+    //    document.getElementsByTagName('li')[0].style.color = 'blue'
+    //    document.getElementsByTagName('li')[1].innerHTML = "Spring Boot"
+    //    document.getElementById('conteudo').innerHTML = "<p>Hola, senhor</p>"
+        
+        var element = document.createElement("div");
+        element.innerHTML = "incluindo texto na div";
+        element.style.backgroundColor = "lightgreen";
+        document.body.append(element)
+
+        var lista = document.getElementById('lista');
+        var li = document.createElement('li');
+        li.textContent = "Quem somos";
+        lista.appendChild(li)
+
+        times = ["Barcelona", "Borussia", "Juventus", "Milan"];
+        var listaDeTimes = document.querySelector('ul#listaTime');
+        for (let time of times) {
+            
+            let listItem = document.createElement('li');
+            listItem.innerText = time;
+            listItem.style.border = '1px solid blue';
+            listaDeTimes.appendChild(listItem);
+        }
+
+
+    </script>
+    <script>
+        var aba = prompt("bem vindo")
+        alert(aba)
+        const h1 = document.getElementById("exemplo");
+
+        function hovering() {
+            h1.innerHTML = "hovering";
+        }
+
+        function tirar() {
+            h1.innerHTML = "hovering out";
+        }
+
+        h1.addEventListener("mouseover", hovering);
+        h1.addEventListener("mouseout", tirar);
+    </script>
+</html>
